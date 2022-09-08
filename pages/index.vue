@@ -18,35 +18,34 @@
     </div>
   </div>
     <div class="container text-center">
-    <div class="row">
-    <div class="m-4">
-      <div class="col-sm-4">
-        <div class="card" style="width: 18rem;">
-            <div class="card-body">
-             <div class="dot3"></div>
+      <div class="m-4">
+        <div class="row">
+          <div class="col-sm-4">
+              <div class="card" style="width: 18rem;">
+                  <div class="card-body">
+                  <div class="dot"></div>
+                  </div>
+                </div>
             </div>
-          </div>
-        </div>
-        <div class="col-sm-4">
-          <div class="card" style="width: 18rem;">
-            <div class="card-body">
-             <div class="dot3"></div>
+            <div class="col-sm-4">
+              <div class="card" style="width: 18rem;">
+                  <div class="card-body">
+                  <div class="dot2"></div>
+                  </div>
+                </div>
             </div>
-          </div>
-        </div>
-        <div class="col-sm-4">
-          <div class="card" style="width: 18rem;">
-            <div class="card-body">
-             <div class="dot3"></div>
+            <div class="col-sm-4">
+              <div class="card" style="width: 18rem;">
+                  <div class="card-body">
+                  <div class="dot3"></div>
+                  </div>
+                </div>
             </div>
-          </div>
+          </div> 
         </div>
-      </div> 
-    </div>
-  </div>
+      </div>
       </div>
     </div>
-  
   </div>
 </template>
 <style>
