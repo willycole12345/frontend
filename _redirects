@@ -1,4 +1,4 @@
 [[redirects]]
 from = "/*"
-to = "/index.vue"
+to = "/pages/index.vue"
 status = 200
