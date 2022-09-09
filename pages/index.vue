@@ -8,7 +8,7 @@
             <div class="row row-cols-auto">
               <div v-for="shape in shapes">
               <div class="col-sm-2" style="cursor: pointer;">
-                <div @click=" getshape(shape.namesofshape)">{{ shape.namesofshape }}</div>
+                <div @click.prevent="selColor(shape.namesofshape, shape.name)">{{ shape.namesofshape }}</div>
               </div>
               </div>
             </div>
@@ -35,12 +35,13 @@
           <div v-for="shape in shapes">
               <div class="col-sm-4">
                   <div class="card" style="width: 18rem;">
-                      <div class="card-body">
-                      <div v-bind:class="getColor(shape.name)"></div>
+                      <div class="card-body" v-show="shape.visible">
+                      <div v-bind:class="getColor(shape.name)" v-show="shape.visible"></div>
                       </div>
                     </div>
                 </div>
             </div>
+            
           </div> 
         </div>
       </div>
@@ -101,39 +102,44 @@ export default {
     name: "IndexPage",
   //  components: { Header }
   data() {
-    sortKey: ['name','namesofshape']
-    columns: ['name', 'smallshape','namesofshape']
+  
   return {
     shapes: [
       {
         name:'red',
         smallshape: 'red',
-        namesofshape:'cube'
+        namesofshape:'cube',
+        visible: true,
        },    
        {
         name:'Green',
         smallshape: 'Green',
-        namesofshape:'box'
+        namesofshape:'box',
+        visible: true,
        },   
        {
         name:'blue',
         smallshape:'blue',
-        namesofshape:'triangle'
+        namesofshape:'triangle',
+        visible: true,
        } ,   
        {
         name:'yellow',
         smallshape: 'yellow', 
-        namesofshape:'round'
+        namesofshape:'round',
+        visible: true,
        },   
        {
         name:'orange',
         smallshape:'orange',
-        namesofshape:'circle'
+        namesofshape:'circle',
+        visible: true,
        } ,  
        {
         name:'black',
         smallshape: 'black',
-        namesofshape:'rectangle'
+        namesofshape:'rectangle',
+        visible: true,
        }    
       ],
       color:{
@@ -148,15 +154,33 @@ export default {
       },
       methods: {
           getColor(name) {
-            console.log(name);
+           // console.log(name);
             return this.color[name]
           },
           getshape(namesofshape) {
             return this.color[namesofshape]
           },
-          
+          filteredP: function (name) {
+            var self = name;
+           // console.log(self);
+            return this.shapes.filter(function (name) {
+                return console.log(name.namesofshape  === name);
+            });
+          },
+          selColor(shapename, color) {
+            this.shapes.forEach((e) => {
+              if (e.name == color) {
+              //  alert(e.name + ' = ' + color);
+                e.visible = true;
+              } else {
+                e.visible = false;
+              }
+            }) 
+          }
         }
-    }
+       }
+    
+    
 
   
 </script>
